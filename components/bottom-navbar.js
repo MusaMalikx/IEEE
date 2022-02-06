@@ -44,12 +44,12 @@ const BottomNavbar = () => {
         </Box>
         <Divider />
         <Box className="md:flex justify-between py-4 text-sm">
-          <Box className="flex">
+          <Box className="flex justify-center mb-3 md:mb-0">
             <Text className="font-bold">© 2022</Text>
             <Text className="ml-5 font-semibold">IEEE Student Branch NUCES</Text>
           </Box>
           <Box>
-            <Text className=" flex items-center space-x-2 font-mono">
+            <Text className=" flex items-center space-x-2 font-mono justify-center">
               <Text>Made with </Text>
               <GiSelfLove />
               <Text> by Mr Malik</Text>
