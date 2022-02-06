@@ -5,7 +5,7 @@ const TeamCard = ({ text1, text2, image }) => {
   const [hover, setHover] = useState(false);
   return (
     <Box
-      className="flex transition ease-linear hover:scale-95 p-1"
+      className="flex transition ease-linear hover:scale-95 p-1 mx-auto"
       onMouseEnter={() => setHover(true)}
       onMouseLeave={() => setHover(false)}
       height={413}

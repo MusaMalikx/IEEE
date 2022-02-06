@@ -19,7 +19,7 @@ const BottomNavbar = () => {
       bg={useColorModeValue("rgb(221, 221, 221,0.8)", "rgb(221, 221, 221,0.3)")}
     >
       <Container maxW="container.xl">
-        <Box className="grid grid-cols-1 md:grid-cols-2 p-20">
+        <Box className="grid grid-cols-1 md:grid-cols-2 py-20">
           <Box className="">
             <Box className="flex space-x-4 mb-3">
               <BsFacebook size={25} />

@@ -76,10 +76,10 @@ export default function Home() {
         </Box>
         <Divider />
         <Box className="grid grid-cols-1 md:grid-cols-2 items-center my-24">
-          <Box className="mb-10 md:mb-0">
+          <Box className="mb-10 md:mb-0 mx-auto">
             <Image src="/Images/cover.jpg" height="480" width="360" alt="" />
           </Box>
-          <Box>
+          <Box className="mx-auto">
             <Text>
               We’re proud to announce that we have bagged the coveted ACM
               International Chapter Excellence Award for “Outstanding Chapter
