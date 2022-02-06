@@ -27,7 +27,9 @@ const LinkItem = ({ href, path, children }) => {
         p={2}
         bg={active ? "#697bb0" : undefined}
         color={active ? "#F7F6F2" : inActiveColor}
-        className={`rounded-sm hover:text-[#697bb0] ${active && 'hover:text-gray-200'}`}
+        className={`rounded-sm hover:text-[#697bb0] ${
+          active && "hover:text-gray-200"
+        }`}
       >
         <Box className="">{children}</Box>
       </Link>
@@ -65,7 +67,7 @@ const TopNavbar = (props) => {
             />
           </Heading>
         </Box>
-        <Box>
+        <Box className="flex">
           <Box className="hidden md:flex">
             <HStack spacing={10} mr={10} className="text-lg font-normal">
               <LinkItem href="/" path={path}>
@@ -81,8 +83,8 @@ const TopNavbar = (props) => {
                 Contact Us
               </LinkItem>
             </HStack>
-            <ThemeToggleButton />
           </Box>
+          <ThemeToggleButton />
           <Box ml={2} display={{ base: "inline-block", md: "none" }}>
             <Menu className="bg-white">
               <MenuButton
