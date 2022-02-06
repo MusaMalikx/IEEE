@@ -34,9 +34,8 @@ const BottomNavbar = () => {
             <Button
               onClick={() => router.push("/contact")}
               bg="#697bb0"
-              colorScheme="blue"
               leftIcon={<RiContactsFill size="18" />}
-              className="mt-4 md:mt-0"
+              className="mt-4 md:mt-0 hover:text-[#697bb0] hover:bg-slate-400"
             >
               CONTACT US
             </Button>

@@ -105,8 +105,10 @@ export default function Home() {
           <Button
             onClick={() => router.push("/teams")}
             bg="#697bb0"
-            colorScheme="blue"
+            //colorScheme="blue"
             leftIcon={<MdGroups size="30" />}
+            className="hover:text-[#697bb0] hover:bg-slate-400 shadow-2xl"
+            //on_hover
           >
             Our Exective Team
           </Button>
