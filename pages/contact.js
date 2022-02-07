@@ -19,14 +19,24 @@ import {
   Textarea,
   useDisclosure,
 } from "@chakra-ui/react";
+import { Form, Formik } from "formik";
 import { useRef, useState } from "react";
 import { MdDoneAll } from "react-icons/md";
+import TextField from "../components/text-field";
+import * as Yup from "yup";
 
 const Contact = () => {
-  const [Name, setName] = useState("");
-  const [Email, setEmail] = useState("");
-  const [Subject, setSubject] = useState("");
-  const [Message, setMessage] = useState("");
+  // const [Name, setName] = useState("");
+  // const [Email, setEmail] = useState("");
+  // const [Subject, setSubject] = useState("");
+  // const [Message, setMessage] = useState("");
+
+  const [state, setState] = useState({
+    name: "",
+    email: "",
+    subject: "",
+    message: "",
+  });
 
   const [NameValid, setNameValid] = useState(false);
   const [EmailValid, setEmailValid] = useState(false);
@@ -39,7 +49,32 @@ const Contact = () => {
   const initialRef = useRef();
   const finalRef = useRef();
 
+  const validate = Yup.object({
+    name: Yup.string()
+      .max(15, "Must be 15 Characters or Less")
+      .required("Required"),
+    email: Yup.string().email("Email is Invalid").required("Email is Required"),
+    subject: Yup.string()
+      .max(20, "Must be 20 Characters or Less")
+      .required("Enter the Subject about which you want to discuss."),
+    message: Yup.string()
+      .max(150, "Must be 150 Characters or Less")
+      .required("Enter the related message."),
+  });
+
   const handleSubmit = () => {
+    if (state.name !== "") {
+      console.log(state.name);
+      if (state.email !== "") {
+        console.log(state.name, state.email);
+        if (state.subject !== "") {
+          console.log(state.name, state.email, state.subject);
+          if (state.message !== "") {
+            console.log(state.name, state.email, state.subject, state.message);
+          }
+        }
+      }
+    }
     // if (Name == "") {
     //   setNameValid(true);
     // } else {
@@ -65,7 +100,7 @@ const Contact = () => {
     // } else if (!NameValid && !EmailValid && !SubjectValid && !MessageValid) {
     //   alert("Form Not Submit");
     // }
-    onOpen();
+    //onOpen();
   };
 
   return (
@@ -79,16 +114,52 @@ const Contact = () => {
             maxW="container.sm"
             className="flex flex-col flex-grow space-y-8"
           >
-            <FormControl isInvalid={NameValid} isRequired>
+            <Formik
+              initialValues={{
+                name: "",
+                email: "",
+                subject: "",
+                message: "",
+              }}
+              validationSchema={validate}
+              onSubmit={(values) => console.log(values)}
+            >
+              {(formik) => (
+                <Form>
+                  <Container
+                    maxW="container.sm"
+                    className="flex flex-col flex-grow space-y-9"
+                  >
+                    {/* {console.log(formik.values)} */}
+                    <TextField label="Name" name="name" type="text" />
+                    <TextField label="Email" name="email" type="email" />
+                    <TextField label="Subject" name="subject" type="text" />
+                    <TextField label="Message" name="message" type="text" />
+                    <Button
+                      bg="#697bb0"
+                      //colorScheme="blue"
+                      leftIcon={<MdDoneAll size="30" />}
+                      className="hover:text-[#697bb0] hover:bg-slate-400 shadow-2xl"
+                      type="submit"
+                      //on_hover
+                    >
+                      Submit Form
+                    </Button>
+                  </Container>
+                </Form>
+              )}
+            </Formik>
+            {/* <FormControl isInvalid={NameValid} isRequired>
               <FormLabel htmlFor="name">Name</FormLabel>
               <Input
                 id="name"
                 placeholder="Name"
-                value={Name}
-                onChange={(e) => setName(e.target.value)}
-                _focus={{ borderColor: "#697bb0", borderWidth:"2px" }}
+                // name="name"
+                // value={state.name}
+                onChange={(e) => setState({ ...state, name: e.target.value })}
+                _focus={{ borderColor: "#697bb0", borderWidth: "2px" }}
               />
-              {!Name && (
+              {!state.name && (
                 <FormErrorMessage>Enter your Name kindly.</FormErrorMessage>
               )}
             </FormControl>
@@ -99,11 +170,11 @@ const Contact = () => {
                 type="email"
                 placeholder="Email"
                 autoComplete="off"
-                value={Email}
-                onChange={(e) => setEmail(e.target.value)}
-                _focus={{ borderColor: "#697bb0", borderWidth:"2px" }}
+                //value={state.email}
+                onChange={(e) => setState({ ...state, email: e.target.value })}
+                _focus={{ borderColor: "#697bb0", borderWidth: "2px" }}
               />
-              {!EmailValid ? (
+              {!state.email ? (
                 <FormHelperText>
                   Enter the email you&apos;d like to receive the response on.
                 </FormHelperText>
@@ -117,11 +188,13 @@ const Contact = () => {
                 id="subject"
                 placeholder="Subject"
                 autoComplete="off"
-                value={Subject}
-                onChange={(e) => setSubject(e.target.value)}
-                _focus={{ borderColor: "#697bb0", borderWidth:"2px" }}
+                //value={state.subject}
+                onChange={(e) =>
+                  setState({ ...state, subject: e.target.value })
+                }
+                _focus={{ borderColor: "#697bb0", borderWidth: "2px" }}
               />
-              {!Subject && (
+              {!state.subject && (
                 <FormErrorMessage>
                   Enter the Subject about which you want to discuss.
                 </FormErrorMessage>
@@ -133,11 +206,13 @@ const Contact = () => {
                 id="message"
                 placeholder="Message"
                 autoComplete="off"
-                value={Message}
-                onChange={(e) => setMessage(e.target.value)}
-                _focus={{ borderColor: "#697bb0", borderWidth:"2px" }}
+                //value={state.message}
+                onChange={(e) =>
+                  setState({ ...state, message: e.target.value })
+                }
+                _focus={{ borderColor: "#697bb0", borderWidth: "2px" }}
               />
-              {!Message && (
+              {!state.message && (
                 <FormErrorMessage>Enter the related message.</FormErrorMessage>
               )}
             </FormControl>
@@ -150,7 +225,7 @@ const Contact = () => {
               //on_hover
             >
               Submit Form
-            </Button>
+            </Button> */}
           </Container>
         </Box>
       </Container>
