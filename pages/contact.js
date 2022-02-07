@@ -154,7 +154,7 @@ const Contact = () => {
       <Modal blockScrollOnMount={false} isOpen={isOpen} onClose={onClose}>
         <ModalOverlay />
         <ModalContent>
-          <ModalHeader>Form Submition</ModalHeader>
+          <ModalHeader>Form Submission</ModalHeader>
           <ModalBody>
             <Text mb="1rem">
               The Form has been Submitted
