@@ -17,7 +17,7 @@ const Teams = () => {
         <Heading className="text-center mb-20 text-[#697bb0] underline underline-offset-8">
           Our Exective Team
         </Heading>
-        <Box className=" grid md:grid-col-2 lg:grid-col-3 xl:grid-cols-4 2xl:grid-cols-4 items-center gap-4">
+        <Box className=" grid md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 2xl:grid-cols-4 items-center gap-4">
           <TeamCard text1="Nabeel Baghoor" text2="Chairperson" image="1.png" />
           <TeamCard text1="Haiqa Saman" text2="WIE Chairperson" image="2.png" />
           <TeamCard
