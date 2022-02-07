@@ -34,11 +34,10 @@ const Contact = () => {
   const [MessageValid, setMessageValid] = useState(false);
   //const isError = Email === "";
 
-  const { isOpen, onOpen, onClose } = useDisclosure()
+  const { isOpen, onOpen, onClose } = useDisclosure();
 
-  const initialRef = useRef()
-  const finalRef = useRef()
-
+  const initialRef = useRef();
+  const finalRef = useRef();
 
   const handleSubmit = () => {
     // if (Name == "") {
@@ -87,6 +86,7 @@ const Contact = () => {
                 placeholder="Name"
                 value={Name}
                 onChange={(e) => setName(e.target.value)}
+                _focus={{ borderColor: "#697bb0", borderWidth:"2px" }}
               />
               {!Name && (
                 <FormErrorMessage>Enter your Name kindly.</FormErrorMessage>
@@ -101,6 +101,7 @@ const Contact = () => {
                 autoComplete="off"
                 value={Email}
                 onChange={(e) => setEmail(e.target.value)}
+                _focus={{ borderColor: "#697bb0", borderWidth:"2px" }}
               />
               {!EmailValid ? (
                 <FormHelperText>
@@ -118,6 +119,7 @@ const Contact = () => {
                 autoComplete="off"
                 value={Subject}
                 onChange={(e) => setSubject(e.target.value)}
+                _focus={{ borderColor: "#697bb0", borderWidth:"2px" }}
               />
               {!Subject && (
                 <FormErrorMessage>
@@ -133,6 +135,7 @@ const Contact = () => {
                 autoComplete="off"
                 value={Message}
                 onChange={(e) => setMessage(e.target.value)}
+                _focus={{ borderColor: "#697bb0", borderWidth:"2px" }}
               />
               {!Message && (
                 <FormErrorMessage>Enter the related message.</FormErrorMessage>
@@ -156,13 +159,16 @@ const Contact = () => {
         <ModalContent>
           <ModalHeader>Form Submission</ModalHeader>
           <ModalBody>
-            <Text mb="1rem">
-              The Form has been Submitted
-            </Text>
+            <Text mb="1rem">The Form has been Submitted</Text>
           </ModalBody>
 
           <ModalFooter>
-            <Button colorScheme="whatsapp" variant="solid" mr={3} onClick={onClose}>
+            <Button
+              colorScheme="whatsapp"
+              variant="solid"
+              mr={3}
+              onClick={onClose}
+            >
               OK
             </Button>
           </ModalFooter>
