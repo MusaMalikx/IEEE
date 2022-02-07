@@ -157,12 +157,12 @@ const Contact = () => {
           <ModalHeader>Form Submition</ModalHeader>
           <ModalBody>
             <Text mb="1rem">
-              The Form has been Submit
+              The Form has been Submitted
             </Text>
           </ModalBody>
 
           <ModalFooter>
-            <Button colorScheme="teal" variant="outline" mr={3} onClick={onClose}>
+            <Button colorScheme="whatsapp" variant="solid" mr={3} onClick={onClose}>
               OK
             </Button>
           </ModalFooter>
