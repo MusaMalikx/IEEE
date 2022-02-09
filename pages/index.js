@@ -2,26 +2,19 @@ import {
   Box,
   Button,
   Container,
-  Divider,
   Heading,
-  HStack,
-  Icon,
-  Stack,
   Text,
   useColorModeValue,
 } from "@chakra-ui/react";
-import Head from "next/head";
-import Image from "next/image";
 import SlideShow from "../components/slide-show";
 import AOS from "aos";
+import Layout from "../components/layouts/article";
 import { useEffect, useState } from "react";
-import MainCard from "../components/main-card";
 import { MdGroups } from "react-icons/md";
 import { useRouter } from "next/router";
 import { IoIosBulb } from "react-icons/io";
 import { GiAwareness } from "react-icons/gi";
 import { FaAssistiveListeningSystems } from "react-icons/fa";
-import Layout from "../components/layouts/article";
 
 export default function Home() {
   const [hov, setHov] = useState(false);
