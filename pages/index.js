@@ -12,7 +12,6 @@ import {
 } from "@chakra-ui/react";
 import Head from "next/head";
 import Image from "next/image";
-import Card from "../components/card";
 import SlideShow from "../components/slide-show";
 import AOS from "aos";
 import { useEffect, useState } from "react";
@@ -87,7 +86,7 @@ export default function Home() {
             //height={{ base: "300px", md: "400px" }}
           >
             <Box
-              className="mx-10 flex flex-col items-center border border-[rgba(0,0,0,0.8)] py-6 px-6"
+              className="mx-10 flex flex-col items-center border-2 border-dashed py-6 px-6"
               onMouseEnter={() => setHov(true)}
               onMouseLeave={() => setHov(false)}
             >
@@ -112,7 +111,7 @@ export default function Home() {
             </Box>
           </Box>
           <Box
-            className="flex items-center justify-center flex-col text-justify tracking-wider py-6 m-3"
+            className="flex items-center justify-center flex-col text-center md:text-justify tracking-wider py-6 m-3"
             style={{
               backgroundImage:
                 'linear-gradient(rgba(0,0,0,0.8), rgba(0,0,0,0.8)),url("/Images/Fast/fast_03.jpg")',
@@ -122,7 +121,7 @@ export default function Home() {
             //height={{ base: "300px", md: "400px" }}
           >
             <Box
-              className="mx-10 flex flex-col items-center border border-[rgba(0,0,0,0.8)] py-6 px-6"
+              className="mx-10 flex flex-col items-center  border-2 border-dashed py-6 px-6"
               onMouseEnter={() => setHov(true)}
               onMouseLeave={() => setHov(false)}
             >
