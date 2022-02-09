@@ -5,7 +5,7 @@ import Layout from "../components/layouts/article";
 const Events = () => {
   return (
     <Layout>
-      <Box className="py-24 relative">
+      <Box className="py-24 relative overflow-x-hidden">
         <Container maxW="container.xl">
           <Heading className="text-center mb-20 text-[#697bb0] underline underline-offset-8">
             Events
