@@ -41,7 +41,7 @@ const TopNavbar = (props) => {
   const { path } = props;
   return (
     <Box
-      className="p-3 z-10"
+      className="p-3 z-20"
       position="fixed"
       as="nav"
       w="100%"

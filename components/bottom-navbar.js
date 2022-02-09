@@ -52,7 +52,7 @@ const BottomNavbar = () => {
           <Text className=" flex items-center space-x-2 font-mono justify-center">
             <Text>Made with </Text>
             <GiSelfLove />
-            <Text> by Mr Malik</Text>
+            <Text> by Musa Malik</Text>
           </Text>
         </Box>
       </Box>

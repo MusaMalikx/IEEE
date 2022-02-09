@@ -14,13 +14,12 @@ import {
   useDisclosure,
 } from "@chakra-ui/react";
 import { Form, Formik } from "formik";
-import { useRef, useState } from "react";
 import { MdDoneAll } from "react-icons/md";
 import TextField from "../components/text-field";
 import * as Yup from "yup";
+import Layout from "../components/layouts/article";
 
 const Contact = () => {
-
   const { isOpen, onOpen, onClose } = useDisclosure();
 
   const validate = Yup.object({
@@ -42,72 +41,74 @@ const Contact = () => {
   };
 
   return (
-    <Box className="py-24">
-      <Container maxW="container.xl">
-        <Heading className="text-center mb-20 text-[#697bb0] underline underline-offset-8">
-          Get In Touch
-        </Heading>
-        <Box>
-          <Container
-            maxW="container.sm"
-            className="flex flex-col flex-grow space-y-8"
-          >
-            <Formik
-              initialValues={{
-                name: "",
-                email: "",
-                subject: "",
-                message: "",
-              }}
-              validationSchema={validate}
-              onSubmit={handleSubmit}
+    <Layout>
+      <Box className="py-24">
+        <Container maxW="container.xl">
+          <Heading className="text-center mb-20 text-[#697bb0] underline underline-offset-8">
+            Get In Touch
+          </Heading>
+          <Box>
+            <Container
+              maxW="container.sm"
+              className="flex flex-col flex-grow space-y-8"
             >
-              {(formik) => (
-                <Form>
-                  <Container
-                    maxW="container.sm"
-                    className="flex flex-col flex-grow space-y-9"
-                  >
-                    <TextField label="Name" name="name" type="text" />
-                    <TextField label="Email" name="email" type="email" />
-                    <TextField label="Subject" name="subject" type="text" />
-                    <TextField label="Message" name="message" type="text" />
-                    <Button
-                      bg="#697bb0"
-                      leftIcon={<MdDoneAll size="30" />}
-                      className="hover:text-[#697bb0] hover:bg-slate-400 shadow-2xl"
-                      type="submit"
+              <Formik
+                initialValues={{
+                  name: "",
+                  email: "",
+                  subject: "",
+                  message: "",
+                }}
+                validationSchema={validate}
+                onSubmit={handleSubmit}
+              >
+                {(formik) => (
+                  <Form>
+                    <Container
+                      maxW="container.sm"
+                      className="flex flex-col flex-grow space-y-9"
                     >
-                      Submit Form
-                    </Button>
-                  </Container>
-                </Form>
-              )}
-            </Formik>
-          </Container>
-        </Box>
-      </Container>
-      <Modal blockScrollOnMount={false} isOpen={isOpen} onClose={onClose}>
-        <ModalOverlay />
-        <ModalContent>
-          <ModalHeader>Form Submission</ModalHeader>
-          <ModalBody>
-            <Text mb="1rem">The Form has been Submitted</Text>
-          </ModalBody>
+                      <TextField label="Name" name="name" type="text" />
+                      <TextField label="Email" name="email" type="email" />
+                      <TextField label="Subject" name="subject" type="text" />
+                      <TextField label="Message" name="message" type="text" />
+                      <Button
+                        bg="#697bb0"
+                        leftIcon={<MdDoneAll size="30" />}
+                        className="hover:text-[#697bb0] hover:bg-slate-400 shadow-2xl"
+                        type="submit"
+                      >
+                        Submit Form
+                      </Button>
+                    </Container>
+                  </Form>
+                )}
+              </Formik>
+            </Container>
+          </Box>
+        </Container>
+        <Modal blockScrollOnMount={false} isOpen={isOpen} onClose={onClose}>
+          <ModalOverlay />
+          <ModalContent>
+            <ModalHeader>Form Submission</ModalHeader>
+            <ModalBody>
+              <Text mb="1rem">The Form has been Submitted</Text>
+            </ModalBody>
 
-          <ModalFooter>
-            <Button
-              colorScheme="whatsapp"
-              variant="solid"
-              mr={3}
-              onClick={onClose}
-            >
-              OK
-            </Button>
-          </ModalFooter>
-        </ModalContent>
-      </Modal>
-    </Box>
+            <ModalFooter>
+              <Button
+                colorScheme="whatsapp"
+                variant="solid"
+                mr={3}
+                onClick={onClose}
+              >
+                OK
+              </Button>
+            </ModalFooter>
+          </ModalContent>
+        </Modal>
+      </Box>
+    </Layout>
   );
 };
 
