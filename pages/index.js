@@ -3,6 +3,8 @@ import {
   Button,
   Container,
   Divider,
+  Heading,
+  HStack,
   Icon,
   Stack,
   Text,
@@ -13,12 +15,16 @@ import Image from "next/image";
 import Card from "../components/card";
 import SlideShow from "../components/slide-show";
 import AOS from "aos";
-import { useEffect } from "react";
+import { useEffect, useState } from "react";
 import MainCard from "../components/main-card";
 import { MdGroups } from "react-icons/md";
 import { useRouter } from "next/router";
+import { IoIosBulb } from "react-icons/io";
+import { GiAwareness } from "react-icons/gi";
+import { FaAssistiveListeningSystems } from "react-icons/fa";
 
 export default function Home() {
+  const [hov, setHov] = useState(false);
   const router = useRouter();
   useEffect(() => {
     AOS.init();
@@ -33,74 +39,113 @@ export default function Home() {
       <SlideShow />
 
       <Container maxW="container.xl" className="p-5">
-        <Box className="mt-10 mb-24">
-          <Box className="grid grid-col-1 md:grid-cols-2">
+        <Box className="mt-10 mb-12 flex flex-col items-center">
+          <Heading>Welcome to</Heading>
+          <Heading className="text-[#697bb0] text-center">
+            IEEE Student Branch NUCES
+          </Heading>
+          <Box
+            className="h-1 w-28 rounded-t-md mt-4"
+            bg={useColorModeValue("#202023", "#F9F9F9")}
+          />
+          <Box className="h-1 w-28 bg-[#697bb0] rounded-b-md" />
+          <Text className="my-8 tracking-wider text-center">
+            The Mission of IEEE Student Branch NUCES is to raise awareness of
+            science and technology among the students who hold electrical or
+            computer science background. The branch conducts several talks,
+            workshops, seminars, educational trips and competitions for this
+            purpose.
+          </Text>
+        </Box>
+        <Box className="mt-10 mb-24 flex flex-col md:flex-row">
+          <Box className="flex flex-col md:flex-row justify-center items-center mx-auto">
+            <Box className="bg-[#697bb0] hover:bg-[#9ea6be] px-16 py-8 m-3 w-52 flex flex-col items-center">
+              <IoIosBulb size={50} />
+              <Text className="text-xl font-semibold">Insights</Text>
+            </Box>
+            <Box className="bg-[#697bb0] hover:bg-[#9ea6be] px-16 py-8 m-3 w-52 flex flex-col items-center">
+              <GiAwareness size={50} />
+              <Text className="text-xl font-semibold">Awareness</Text>
+            </Box>
+            <Box className="bg-[#697bb0] hover:bg-[#9ea6be] px-16 py-8 m-3 w-52 flex flex-col items-center">
+              <FaAssistiveListeningSystems size={50} />
+              <Text className="text-xl font-semibold">Assistence</Text>
+            </Box>
+            {/* <Box className="bg-[#697bb0] p-16">Awareness</Box>
+            <Box className="bg-[#697bb0] p-16">Assistence</Box> */}
+          </Box>
+        </Box>
+        <Box className="mt-10 mb-24 grid grid-cols-1 md:grid-cols-2 gap-3 justify-evenly">
+          <Box
+            className="flex items-center justify-center flex-col text-justify tracking-wider py-6 m-3"
+            style={{
+              backgroundImage:
+                'linear-gradient(rgba(0,0,0,0.8), rgba(0,0,0,0.8)),url("/Images/Fast/fast_03.jpg")',
+              backgroundPosition: "center",
+              backgroundSize: "cover",
+            }}
+            //height={{ base: "300px", md: "400px" }}
+          >
             <Box
-              className="p-4 rounded-md m-2"
-              bg={useColorModeValue(
-                "rgb(11,25,51,0.8)",
-                "rgb(232,240,242,0.8)"
-              )}
-              color={useColorModeValue("rgb(232,240,242)", "rgb(11,25,51)")}
+              className="mx-10 flex flex-col items-center border border-[rgba(0,0,0,0.8)] py-6 px-6"
+              onMouseEnter={() => setHov(true)}
+              onMouseLeave={() => setHov(false)}
             >
-              <Text className="text-2xl font-bold mb-4">WHY ACM?</Text>
-              <Text>
-                <strong>NUCES ACM Lahore</strong> is the tech-focused computer
-                science society at FAST Lahore responsible for organizing
-                workshops, seminars, gaming competitions, quizzes, programming
-                competitions. Our student chapter is licensed and affiliated
-                with the International Association of Computing Machinery
+              <Heading
+                borderRadius="lg"
+                bg="rgb(102,124,172,0.5)"
+                mb={6}
+                p={3}
+                align="center"
+                color="#F7F6F2"
+                className=""
+              >
+                Annual Tradition
+              </Heading>
+              <Text color="#F7F6F2" className="">
+                IEEE NUCES Lahore Student Branch yearly organizes a 3 day
+                Flagship Event: IEEE Week. This event will aims to unite
+                professionals and students across Pakistan to share and explore
+                ideas, develop skills and discuss issues related to education,
+                research and careers.
               </Text>
             </Box>
-            <MainCard
-              title="Most Attractive IT WEEK"
-              bold="ACM"
-              desc=" is one of the best Society for the person who want to learn different skills. In our IT week, we provide different opportunities to our participants to learn and to develop their skills."
-            />
-            <MainCard
-              title="Legacy of Past Years"
-              bold="NUCES ACM Lahore"
-              desc=" is responsible for holding events like Geek Week, workshops, seminars and competitions."
-            />
-            <MainCard
-              title="Annual Tridition"
-              bold="Geek Week is NUCES ACM’s"
-              desc=" annual flagship event. It’s a place where geeks and techies from all over the country gather to impart and gain knowledge, and also to test themselves. The tech-oriented event is no doubt beneficial to all aspiring geeks!"
-            />
           </Box>
-          <MainCard
-            title="Our Initiative"
-            bold="ACM International"
-            desc="  is the world’s largest educational and scientific computing society, delivering resources that advance computing as a science and a profession. ACM provides the computing field’s premier digital library."
-          />
-        </Box>
-        <Divider />
-        <Box className="grid grid-cols-1 md:grid-cols-2 items-center my-24">
-          <Box className="mb-10 md:mb-0 mx-auto">
-            <Image src="/Images/cover.jpg" height="480" width="360" alt="" />
-          </Box>
-          <Box className="mx-auto">
-            <Text>
-              We’re proud to announce that we have bagged the coveted ACM
-              International Chapter Excellence Award for “Outstanding Chapter
-              Activities” from ACM – Association for Computing Machinery ACM
-              Student Chapters around the world compete for these excellence
-              awards and we’re stoked to be awarded for this category. We thank
-              our advisors: Dr. Muhammad Kamran Lodhi and Dr. Mubasher Baig, our
-              mentors, senior exe-members that will depart this semester and of
-              course, all the participants. We would also like to thank our
-              outreach partners: NUST ACM Student Chapter, Developer Student
-              Club FAST Lahore, Developer Student Club – NUST, our media
-              partner: NMG – Nuces Media Group, and FAST Music Society for
-              jazzing up Geek Week ’20! It goes without saying that we’re also
-              extremely grateful to our guests for making Geek Week ’20 the
-              stellar success that it was! We hope to make the year 2020-21 even
-              better by setting the bar higher than before and beating the
-              benchmarks we set for ourselves last year!
-            </Text>
+          <Box
+            className="flex items-center justify-center flex-col text-justify tracking-wider py-6 m-3"
+            style={{
+              backgroundImage:
+                'linear-gradient(rgba(0,0,0,0.8), rgba(0,0,0,0.8)),url("/Images/Fast/fast_03.jpg")',
+              backgroundPosition: "center",
+              backgroundSize: "cover",
+            }}
+            //height={{ base: "300px", md: "400px" }}
+          >
+            <Box
+              className="mx-10 flex flex-col items-center border border-[rgba(0,0,0,0.8)] py-6 px-6"
+              onMouseEnter={() => setHov(true)}
+              onMouseLeave={() => setHov(false)}
+            >
+              <Heading
+                borderRadius="lg"
+                bg="rgb(102,124,172,0.5)"
+                mb={6}
+                p={3}
+                align="center"
+                color="#F7F6F2"
+                className=""
+              >
+                Legacy
+              </Heading>
+              <Text color="#F7F6F2" className="">
+                For years, IEEE Nuces Lahore has conducted a plethora of
+                seminars to educate the youth in all industrial sectors with a
+                penetrating depth of Electrical Engineering dimension. It
+                conducts Workshops, Gaming Competitions and much more!
+              </Text>
+            </Box>
           </Box>
         </Box>
-        <Divider />
         <Box className="mt-24 mb-12 flex justify-center">
           <Button
             onClick={() => router.push("/teams")}
