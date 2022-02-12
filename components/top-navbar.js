@@ -14,6 +14,7 @@ import {
 } from "@chakra-ui/react";
 import Image from "next/image";
 import NextLink from "next/link";
+import { useRouter } from "next/router";
 import { AiOutlineMenu } from "react-icons/ai";
 import ThemeToggleButton from "./theme-toggle-button";
 
@@ -27,9 +28,8 @@ const LinkItem = ({ href, path, children }) => {
         p={2}
         bg={active ? "#697bb0" : undefined}
         color={active ? "#F7F6F2" : inActiveColor}
-        className={`rounded-sm hover:text-[#697bb0] ${
-          active && "hover:text-gray-200"
-        }`}
+        className={`rounded-sm hover:text-[#697bb0] ${active && "hover:text-gray-200"
+          }`}
       >
         <Box className="">{children}</Box>
       </Link>
@@ -38,6 +38,7 @@ const LinkItem = ({ href, path, children }) => {
 };
 
 const TopNavbar = (props) => {
+  const router = useRouter();
   const { path } = props;
   return (
     <Box
@@ -55,7 +56,7 @@ const TopNavbar = (props) => {
     >
       <Box className="flex justify-between items-center">
         <Box>
-          <Heading>
+          <Heading onClick={() => router.push('/')} className="cursor-pointer">
             <Image
               src={`/logo/${useColorModeValue(
                 "logo_dark.png",

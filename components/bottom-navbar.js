@@ -8,7 +8,7 @@ import {
 } from "@chakra-ui/react";
 import { RiContactsFill } from "react-icons/ri";
 import { BsFacebook, BsInstagram } from "react-icons/bs";
-import { AiTwotoneMail } from "react-icons/ai";
+import { AiTwotoneMail, AiOutlineTwitter } from "react-icons/ai";
 import { GiSelfLove } from "react-icons/gi";
 import { useRouter } from "next/router";
 
@@ -30,7 +30,7 @@ const BottomNavbar = () => {
             CONTACT US
           </Button>
         </Box>
-        <Box className="flex my-4 justify-between mx-auto">
+        <Box className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 my-4 justify-between mx-auto">
           <Button className="m-2" leftIcon={<BsFacebook size={20} />}>
             facebook
           </Button>
@@ -39,6 +39,9 @@ const BottomNavbar = () => {
           </Button>
           <Button className="m-2" leftIcon={<AiTwotoneMail size={20} />}>
             mail
+          </Button>
+          <Button className="m-2" leftIcon={<AiOutlineTwitter size={20} />}>
+            twitter
           </Button>
         </Box>
         <Box>852-B Milaad St, Block B Faisal Town, Lahore, Punjab 54770</Box>
