@@ -7,9 +7,7 @@ import {
   useColorModeValue,
 } from "@chakra-ui/react";
 import SlideShow from "../components/slide-show";
-import AOS from "aos";
 import Layout from "../components/layouts/article";
-import { useEffect, useState } from "react";
 import { MdGroups } from "react-icons/md";
 import { useRouter } from "next/router";
 import { IoIosBulb } from "react-icons/io";
@@ -17,11 +15,7 @@ import { GiAwareness } from "react-icons/gi";
 import { FaAssistiveListeningSystems } from "react-icons/fa";
 
 export default function Home() {
-  const [hov, setHov] = useState(false);
   const router = useRouter();
-  useEffect(() => {
-    AOS.init();
-  }, []);
   return (
     <Layout>
       <Box className="" data-aos="fade-up">
@@ -77,8 +71,6 @@ export default function Home() {
             >
               <Box
                 className="mx-10 flex flex-col items-center border-2 border-dashed py-6 px-6"
-                onMouseEnter={() => setHov(true)}
-                onMouseLeave={() => setHov(false)}
               >
                 <Heading
                   borderRadius="lg"

@@ -5,14 +5,9 @@ import Layout from "../components/layouts/main";
 import theme from "../lib/theme";
 import "../styles/globals.css";
 import "bootstrap/dist/css/bootstrap.min.css";
-import "react-responsive-carousel/lib/styles/carousel.min.css"; // requires a loader
-import AOS from "aos";
-import { useEffect } from "react";
+import "react-responsive-carousel/lib/styles/carousel.min.css";
 
 const MyApp = ({ Component, pageProps, router }) => {
-  useEffect(() => {
-    AOS.init();
-  }, []);
   return (
     <ChakraProvider theme={theme}>
       <Fonts />
