@@ -10,7 +10,6 @@ import {
   ModalHeader,
   ModalOverlay,
   Text,
-  Textarea,
   useDisclosure,
 } from "@chakra-ui/react";
 import { Form, Formik } from "formik";
@@ -35,9 +34,26 @@ const Contact = () => {
       .required("Enter the related message."),
   });
 
-  const handleSubmit = (values) => {
+  const handleSubmit = async (values) => {
     //console.log(values);
-    onOpen();
+    try {
+      const response = await fetch('https://v1.nocodeapi.com/mr_malik/google_sheets/BhSUHlHsoOdGPspG?tabId=Sheet1', {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json'
+        },
+        body: JSON.stringify([[values.name, values.email, values.subject, values.message, new Date().toLocaleString()]])
+      }
+      );
+      await response.json()
+      onOpen();
+      values.name = '';
+      values.email = '';
+      values.subject = '';
+      values.message = '';
+    } catch (err) {
+      console.log(err)
+    }
   };
 
   return (
