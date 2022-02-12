@@ -73,7 +73,7 @@ export default function Home() {
                 backgroundPosition: "center",
                 backgroundSize: "cover",
               }}
-              //height={{ base: "300px", md: "400px" }}
+            //height={{ base: "300px", md: "400px" }}
             >
               <Box
                 className="mx-10 flex flex-col items-center border-2 border-dashed py-6 px-6"
@@ -108,7 +108,7 @@ export default function Home() {
                 backgroundPosition: "center",
                 backgroundSize: "cover",
               }}
-              //height={{ base: "300px", md: "400px" }}
+            //height={{ base: "300px", md: "400px" }}
             >
               <Box
                 className="mx-10 flex flex-col items-center  border-2 border-dashed py-6 px-6"
@@ -137,14 +137,14 @@ export default function Home() {
           </Box>
           <Box className="mt-24 mb-12 flex justify-center">
             <Button
-              onClick={() => router.push("/teams")}
+              onClick={() => router.push("https://www.ieee.org/membership/join/index.html?WT.mc_id=hc_join")}
               bg="#697bb0"
               //colorScheme="blue"
               leftIcon={<MdGroups size="30" />}
               className="hover:text-[#697bb0] hover:bg-slate-400 shadow-2xl"
-              //on_hover
+            //on_hover
             >
-              Our Exective Team
+              Join IEEE International
             </Button>
           </Box>
         </Container>
