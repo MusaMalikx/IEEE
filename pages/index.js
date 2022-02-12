@@ -141,7 +141,7 @@ export default function Home() {
               bg="#697bb0"
               //colorScheme="blue"
               leftIcon={<MdGroups size="30" />}
-              className="hover:text-[#697bb0] hover:bg-slate-400 shadow-2xl"
+              className="hover:text-[#697bb0] text-[#f9f9f9] hover:bg-slate-400 shadow-2xl"
             //on_hover
             >
               Join IEEE International

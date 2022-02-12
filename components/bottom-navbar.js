@@ -78,7 +78,8 @@ const BottomNavbar = () => {
           <Text className=" flex items-center space-x-2 font-mono justify-center">
             <Text>Made with </Text>
             <GiSelfLove />
-            <Text> by Musa Malik</Text>
+            <Text> by </Text>
+            <Link href="https://github.com/MusaMalikx" target="_blank" _hover={{ color: useColorModeValue('#f9f9f9', '#202023') }}>Musa Malik</Link>
           </Text>
         </Box>
       </Box>

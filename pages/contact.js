@@ -75,7 +75,7 @@ const Contact = () => {
                       <Button
                         bg="#697bb0"
                         leftIcon={<MdDoneAll size="30" />}
-                        className="hover:text-[#697bb0] hover:bg-slate-400 shadow-2xl"
+                        className="hover:text-[#697bb0] text-[#f9f9f9] hover:bg-slate-400 shadow-2xl"
                         type="submit"
                       >
                         Submit Form
