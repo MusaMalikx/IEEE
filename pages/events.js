@@ -5,16 +5,16 @@ import Layout from "../components/layouts/article";
 const Events = () => {
   return (
     <Layout>
-      <Box className="py-24 relative overflow-x-hidden">
+      <Box className="py-24 relative">
         <Container maxW="container.xl">
           <Heading className="text-center mb-20 text-[#697bb0] underline underline-offset-8">
             Events
           </Heading>
           <Box className="relative">
             <Container
-              maxW="container.lg"
+              maxW={{ base: 'container.sm', md: 'container.lg' }}
               className="grid text-center"
-              justifyContent={{ base: "center", lg: "right" }}
+              justifyContent={{ base: "center", md: "right" }}
             >
               <Text className="text-3xl font-medium mb-10 uppercase content-end">
                 Python Workshop
@@ -34,38 +34,40 @@ const Events = () => {
                   our future events.
                 </Text>
               </Text>
-              <Carousel
-                autoPlay
-                infiniteLoop
-                showStatus={false}
-                width={480}
-                interval={8000}
-              >
-                <Box>
-                  <Image src="/Images/Events/Python/1.jpeg" alt="python" />
-                </Box>
-                <Box>
-                  <Image src="/Images/Events/Python/2.jpeg" alt="python" />
-                </Box>
-                <Box>
-                  <Image src="/Images/Events/Python/3.jpeg" alt="python" />
-                </Box>
-              </Carousel>
+              <Box className="" maxWidth={480}>
+                <Carousel
+                  autoPlay
+                  infiniteLoop
+                  showStatus={false}
+                  //width={480}
+                  interval={8000}
+                >
+                  <Box>
+                    <Image src="/Images/Events/Python/1.jpeg" alt="python" />
+                  </Box>
+                  <Box>
+                    <Image src="/Images/Events/Python/2.jpeg" alt="python" />
+                  </Box>
+                  <Box>
+                    <Image src="/Images/Events/Python/3.jpeg" alt="python" />
+                  </Box>
+                </Carousel>
+              </Box>
             </Container>
           </Box>
           <Box className="relative my-10">
             <Container
-              maxW="container.lg"
+              maxW={{ base: 'container.sm', md: 'container.lg' }}
               className="grid text-center"
-              justifyContent={{ base: "center", lg: "left" }}
+              justifyContent={{ base: "center", md: "left" }}
             >
               <Text className="text-3xl font-medium mb-10 uppercase content-end">
                 CS-GO Gaming Competition
               </Text>
               <Text
-                className="bg-[rgb(105,123,176)] p-4 rounded-md lg:absolute lg:z-10 lg:right-0 mb-3 lg:mb-0"
+                className="bg-[rgb(105,123,176)] p-4 rounded-md lg:absolute lg:z-10 lg:right-16 mb-3 lg:mb-0"
                 backgroundImage='url("https://www.transparenttextures.com/patterns/bright-squares.png")'
-                top={{ lg: 150 }}
+                top={{ lg: 120 }}
                 width={{ lg: 640 }}
               >
                 <Text className="text-[#F9F9F9] bg-[rgb(0,0,0,0.1)] p-3 tracking-wider rounded-md">
@@ -80,30 +82,32 @@ const Events = () => {
                   event.
                 </Text>
               </Text>
-              <Carousel
-                autoPlay
-                infiniteLoop
-                showStatus={false}
-                width={540}
-                interval={8000}
-              >
-                <Box>
-                  <Image src="/Images/Events/CS-GO/1.jpeg" alt="cs-go" />
-                </Box>
-                {/* <Box>
+              <Box className="" maxWidth={480}>
+                <Carousel
+                  autoPlay
+                  infiniteLoop
+                  showStatus={false}
+                  //width={480}
+                  interval={8000}
+                >
+                  <Box>
+                    <Image src="/Images/Events/CS-GO/1.jpeg" alt="cs-go" />
+                  </Box>
+                  {/* <Box>
                 <Image src="/Images/Events/Python/2.jpeg" alt="python" />
               </Box>
               <Box>
                 <Image src="/Images/Events/Python/3.jpeg" alt="python" />
               </Box> */}
-              </Carousel>
+                </Carousel>
+              </Box>
             </Container>
           </Box>
           <Box className="relative">
             <Container
-              maxW="container.lg"
+              maxW={{ base: 'container.sm', md: 'container.lg' }}
               className="grid text-center"
-              justifyContent={{ base: "center", lg: "right" }}
+              justifyContent={{ base: "center", md: "right" }}
             >
               <Text className="text-3xl font-medium mb-10 uppercase content-end">
                 Freelancing Seminar
@@ -122,23 +126,25 @@ const Events = () => {
                   Section joined us.
                 </Text>
               </Text>
-              <Carousel
-                autoPlay
-                infiniteLoop
-                showStatus={false}
-                width={480}
-                interval={8000}
-              >
-                <Box>
-                  <Image src="/Images/Events/Seminar/1.jpeg" alt="python" />
-                </Box>
-                <Box>
-                  <Image src="/Images/Events/Seminar/2.jpeg" alt="python" />
-                </Box>
-                <Box>
-                  <Image src="/Images/Events/Seminar/3.jpeg" alt="python" />
-                </Box>
-              </Carousel>
+              <Box className="" maxWidth={480}>
+                <Carousel
+                  autoPlay
+                  infiniteLoop
+                  showStatus={false}
+                  //width={480}
+                  interval={8000}
+                >
+                  <Box>
+                    <Image src="/Images/Events/Seminar/1.jpeg" alt="python" />
+                  </Box>
+                  <Box>
+                    <Image src="/Images/Events/Seminar/2.jpeg" alt="python" />
+                  </Box>
+                  <Box>
+                    <Image src="/Images/Events/Seminar/3.jpeg" alt="python" />
+                  </Box>
+                </Carousel>
+              </Box>
             </Container>
           </Box>
         </Container>
